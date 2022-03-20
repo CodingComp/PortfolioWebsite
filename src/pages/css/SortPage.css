@@ -1,0 +1,228 @@
+/*
+* Side Menu
+*/
+.sideMenu {
+  padding-left: 10px;
+  padding-right: 10px;
+
+  width: 300px;
+  height: 700px; 
+  position: absolute;
+  
+  left: 0%;
+  top: 22%;
+  
+  border-radius: 0px 15px 15px 0px;
+  
+  background-color: #303030;
+  box-shadow: 0px 0px 5px black;
+  
+  animation-duration: 1.5s;
+  animation-name: slideIn-LeftToRight;
+}
+
+.sideMenu a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease 0s;
+}
+
+.sideMenu a:hover{
+    color: #0088a9
+}
+
+  
+@keyframes slideIn-LeftToRight {
+  from {
+    left: -350px;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+.sideMenu .sortBtn {
+  background-color: green;
+  position: relative;
+  top: 80%;
+  left: 15%;
+
+  padding-left: 80px;
+  padding-right: 80px;
+
+  border-radius: 10px 10px 10px 10px;
+}
+  
+/*
+* BAR ELEMENT
+*/
+
+.arrBar {
+  width: 50px;
+  height: 100px;
+
+  background-color: #21b5ff;
+
+  border-radius: 0px 0px 10px 10px;
+  border-width: 3px;
+  
+  margin: 0 1px;
+  display: inline-block;
+  opacity: 0;
+
+  
+  animation-duration: 1.5s;
+  animation-name: enterAnimation;
+  animation-fill-mode: forwards;
+ 
+}
+
+@keyframes enterAnimation {
+  0%{
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+  }
+  100%{
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }    
+}
+
+.leaving{
+  animation-duration: 1.5s;
+  animation-name: exitAnimation;
+  animation-fill-mode: forwards;
+}
+
+@keyframes exitAnimation {
+  0%{
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }
+  100%{
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0;
+  }  
+}
+
+/*
+* Main Window
+*/
+  
+.mainWindow {
+  width: 1920px;
+  height: 1200px; 
+  position: absolute;
+
+  padding-left: 10px;
+  padding-right: 10px;
+  
+  right: 5%;
+  top: 0%;
+  border-radius: 0px 0px 15px 15px;
+
+  background-color: #303030;
+  box-shadow: 0px 0px 5px black;
+
+  animation-duration: 2s;
+  animation-name: slideIn-Down;
+}
+  
+@keyframes slideIn-Down {
+  from {
+    top: -1920px;
+  }
+  to {
+    top: 0%;
+  }
+}
+
+/*
+* Bar Element Area
+*/
+
+.mainWindow .barElementArea {
+  height: 98%;
+  left: 2%;
+  position: absolute;
+}
+
+/*
+* Settings Panel Area
+*/
+
+.mainWindow .settingPanel {
+  width: 1300px;
+  height: 80px; 
+  position: absolute;
+
+  display: flex;
+
+  padding-left: 10px;
+  padding-right: 10px;
+
+  z-index: -1;
+
+  right: 15%;
+  top: 100%;
+
+  border-radius: 0px 0px 15px 15px;
+
+  background-color: #303030;
+  box-shadow: 0px 0px 5px black;
+
+  animation-duration: 2.5s;
+  animation-name: slideIn-Down-SettingsPanel;
+}
+
+.mainWindow .slider{
+  padding-right: 20px;
+}
+
+@keyframes slideIn-Down-SettingsPanel {
+  from {
+    top: -400px;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+/*
+* SLIDERS 
+*/
+.sliderDiv {
+  align-items: center;
+    color: white;
+    margin-bottom: 2rem;
+
+}
+
+.value {
+  top: -100px;
+  font-size: 1rem;
+}
+
+.slider {
+  flex: 6;
+  width: 400px;
+  height: 10px;
+  border-radius: 5px;
+  background: #efefef;
+  outline: none;            
+}
+
+.settingsLine {
+  width: 5%;
+}

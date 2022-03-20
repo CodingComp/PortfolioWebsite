@@ -1,0 +1,15 @@
+.projectsTable {
+    border: 1px solid;
+}
+
+.projectsTable tr td  {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid;
+}
+
+.projectsTable th {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid;
+}
