@@ -21,13 +21,13 @@
   animation-name: slideIn-LeftToRight;
 }
 
-.sideMenu a {
+.sideMenu button {
   text-decoration: none;
   color: white;
   transition: all 0.3s ease 0s;
 }
 
-.sideMenu a:hover{
+.sideMenu button:hover{
     color: #0088a9
 }
 
@@ -58,63 +58,63 @@
 */
 
 .arrBar {
-  width: 50px;
-  height: 100px;
+  width: 30px;
 
   background-color: #21b5ff;
 
   border-radius: 0px 0px 10px 10px;
   border-width: 3px;
   
-  margin: 0 1px;
-  display: inline-block;
+  margin-right: 4px;
+  display: inline-flex;
+  opacity: 1;
+}
+
+.arrBar p {
+  margin: 0px Auto 0px Auto;
+}
+
+.animateBar {
+  animation: newHeightAnimation .3s 1;
+}
+
+.arrBarTransition-enter {
   opacity: 0;
-
-  
-  animation-duration: 1.5s;
-  animation-name: enterAnimation;
-  animation-fill-mode: forwards;
- 
+  transform: translateY(-100%);
+  transition: all .3s ease-in;
 }
 
-@keyframes enterAnimation {
-  0%{
-    -webkit-transform: rotateX(-100deg);
-    transform: rotateX(-100deg);
-    -webkit-transform-origin: top;
-    transform-origin: top;
+.arrBarTransition-enter-active {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.arrBarTransition-exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.arrBarTransition-exit-active {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all .3s ease-in;
+}
+
+.testing {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+@keyframes newHeightAnimation {
+  0%   { 
+    height: var(--prevHeight);
   }
-  100%{
-    -webkit-transform: rotateX(0deg);
-    transform: rotateX(0deg);
-    -webkit-transform-origin: top;
-    transform-origin: top;
-    opacity: 1;
-  }    
-}
-
-.leaving{
-  animation-duration: 1.5s;
-  animation-name: exitAnimation;
-  animation-fill-mode: forwards;
-}
-
-@keyframes exitAnimation {
-  0%{
-    -webkit-transform: rotateX(0deg);
-    transform: rotateX(0deg);
-    -webkit-transform-origin: top;
-    transform-origin: top;
-    opacity: 1;
+  100% { 
+    height: var(--newHeight);
   }
-  100%{
-    -webkit-transform: rotateX(-100deg);
-    transform: rotateX(-100deg);
-    -webkit-transform-origin: top;
-    transform-origin: top;
-    opacity: 0;
-  }  
 }
+
 
 /*
 * Main Window
@@ -151,11 +151,9 @@
 /*
 * Bar Element Area
 */
-
-.mainWindow .barElementArea {
-  height: 98%;
-  left: 2%;
+.barElementArea {
   position: absolute;
+  left: 2%;
 }
 
 /*
@@ -202,7 +200,7 @@
 /*
 * SLIDERS 
 */
-.sliderDiv {
+.settingDiv {
   align-items: center;
     color: white;
     margin-bottom: 2rem;

@@ -5,8 +5,8 @@
   
 /* Hide scrollbar for IE, Edge and Firefox */
 * {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
 }
 
 /*NAVIGATOR ELEMENTS*/
@@ -31,10 +31,34 @@
 /*CANVAS ELEMENT*/
 .bgCanvas {
     position: absolute;
-    height:100vh;
-    width: 99.35vw;
+    opacity: 0;
     z-index: -1;
     background-color: transparent;
+
+    border-bottom: 5px solid #404040;
+
+    animation-duration: 5s;
+    animation-delay: 2s;
+    animation-name: fadeInCanvas;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInCanvas {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+/* Top Nav Bar */
+.stickyNavBar {
+    position: relative;
+    background-color: #404040;
+    top: 100vh;
+}
+
+.stickyNavBar a {
+    padding: 10px;
 }
 
 /*TOP CONTENT DIV*/
@@ -46,6 +70,7 @@
 h1 {
     font-size: 100px;
     font-weight: bold;
+    
 } 
 
 h2 {
@@ -61,12 +86,14 @@ h2 {
 .t1 {
     animation-duration: 3s;
     animation-name: slideIn1;
+    text-shadow: 3px 3px 4px #000000;
 }
 
 .t2 {
     
     animation-duration: 3s;
     animation-name: slideIn2;
+    text-shadow: 3px 3px 4px #000000;
 }
 
 @keyframes slideIn1 {

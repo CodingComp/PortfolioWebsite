@@ -8,35 +8,25 @@ import arrow from './imgs/indexPage/arrow.png';
 import aImg from './imgs/indexPage/amPH.png';
 import sImg from './imgs/indexPage/skillsPH.png';
 import ttimg from './imgs/wallpaper.jpg';
+import BgCanvas from './scripts/BgCanvas';
 
 const MainPage = () => {
 
     useEffect(() => {
         Aos.init({duration: 2000});
-
-        const script = document.createElement("script");
-        script.src = "./scripts/BgCanvas.js";
-
-        document.body.appendChild(script);
     }, []);
 
     return(
         <div>
-            <div className="canvasDiv">
-                
-            </div>
-
-            {
-            /*
-            <div className="navigator">
-                <a href='#welcome'>Welcome</a>
+            <BgCanvas/>
+            {/* #example will move the view to said area but will load the page again, another way? Code?*/}
+            <div class="stickyNavBar">
+                <a href='#welcome'>Home</a>
                 <a href='#aboutMe'>About Me</a>
-                <a href='#recentProjects'>Recent Work</a>
+                <a href='#recentProjects'>Recent Projects</a>
+                <a href=''>More Projects</a>
                 <a href=''>Contact Me</a>
             </div>
-            */
-            }
-                        
 
             <div className="topContent" id="welcomeArea"> 
                 <div className="mainText">
@@ -58,7 +48,7 @@ const MainPage = () => {
                     <div className="grid">
                         <div data-aos="fade-right">
                             <h3 style={{float: 'left'}}>About Me</h3>
-                            <p style={{textAlign: 'left', float: 'left'}}>Hi there, first off thanks for taking the time to look through my website. 
+                            <p style={{textAlign: 'left', float: 'left'}}>Hi there, first I want to thank you for taking the time to look at my website, I really appriciate it. 
                                 I'm a college student currently attending the University Of Utah majoring in Computer Science. 
                                 For the longest time I have always been interested with technology, I loved messing aroudn with computers when I was younger.
                                 I got the idea to start programming around six years ago. The first two years of programming adventure were self taught, consisting of small projects.
@@ -95,7 +85,7 @@ const MainPage = () => {
                                 built into this website, you can click the link below to view the page.
                             </p>
                             <a href="http://github.com" target="_blank">GitGub</a>
-                            <a href="http://github.com" target="_blank" style={{left: "100px"}}>Sorting Page</a>
+                            <a href="/SortingPage" style={{left: "100px"}}>Sorting Page</a>
                         </div>
                         <img src={ttimg} class='imgRight'/>
                     </div>
